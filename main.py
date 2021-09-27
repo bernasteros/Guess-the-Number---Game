@@ -1,6 +1,7 @@
 from art import logo
 from random import randint
 from os import name, system
+from time import sleep as slp
 
 def clear():
   
@@ -50,8 +51,9 @@ def guess_number(solution, life):
         
         try:
             my_number = int(input("Guess the number:"))
-        except TypeError:
-            print("Error: This is no word-guessing game!")
+        except ValueError:
+            print("Game Over: This is not a word guessing game!")
+            break
         clear()
         print(logo)
         if my_number == solution:
@@ -71,3 +73,4 @@ print(logo)
 
 while input("Start a new game? (y/n)").lower() == "y":
     guess_number(number_pick(), difficulty())
+print("Thank you for dropping by :)\nGood bye, and take care!")
