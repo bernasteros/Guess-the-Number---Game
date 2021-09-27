@@ -23,7 +23,7 @@ def difficulty():
 
     clear()
     print(logo)
-    
+
     choice = ""
     level_dict = {
      "easy": 10,
@@ -63,12 +63,11 @@ def guess_number(solution, life):
                 break
             else:
                 if my_number > solution:
-                    print(f"The number is lower than your guess.\n Attempts remaining: {life}")
+                    print("The number is lower than your guess.\n Attempts remaining: " + str(life))
                 else:
-                    print("The number is higher than your guess.\n Attempts remaining: {life}")
+                    print("The number is higher than your guess.\n Attempts remaining: " + str(life))
 
 print(logo)
 
 while input("Start a new game? (y/n)").lower() == "y":
-    life = difficulty()
-    guess_number(number_pick(), life)
+    guess_number(number_pick(), difficulty())
